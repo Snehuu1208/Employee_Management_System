@@ -128,7 +128,7 @@ public class UpdateEmployee extends  JFrame implements ActionListener{
          add(labelempId);
          
          try{
-             Con c=new Con();
+             Conn c=new Conn();
              String query="Select * from employee where empId='"+empId+"'";
              ResultSet rs=c.s.executeQuery(query);
              while(rs.next()){
@@ -188,7 +188,7 @@ public class UpdateEmployee extends  JFrame implements ActionListener{
             String designation=tfdesignation.getText();
             
             try{
-                Con c=new Con();
+                Conn c=new Conn();
                 String query="update employee set fname = '"+fname+"',salary = '"+salary+"',address = '"+address+"',phone = '"+phone+"',email = '"+email+"',education = '"+education+"',designation = '"+designation+"'where empId = '"+empId+"'";
                 c.s.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Details updated successfully");

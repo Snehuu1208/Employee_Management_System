@@ -30,7 +30,7 @@ public class ViewEmployee extends  JFrame implements ActionListener{
          add(cemployeeId);
          
          try{
-            Con c=new Con();
+            Conn c=new Conn();
             ResultSet rs=c.s.executeQuery("select * from employee");
             
             while(rs.next()){
@@ -42,7 +42,7 @@ public class ViewEmployee extends  JFrame implements ActionListener{
          
          table=new JTable();
          try{
-            Con c=new Con();
+            Conn c=new Conn();
             ResultSet rs=c.s.executeQuery("select * from employee");
             table.setModel(DbUtils.resultSetToTableModel(rs));
             
@@ -102,7 +102,7 @@ public class ViewEmployee extends  JFrame implements ActionListener{
             String query="select * from employee where empId=  '"+cemployeeId.getSelectedItem()+"'";
             
             try{
-                Con c=new Con();
+                Conn c=new Conn();
                 ResultSet rs=c.s.executeQuery(query);
                 table.setModel(DbUtils.resultSetToTableModel(rs));
             }catch(Exception e){

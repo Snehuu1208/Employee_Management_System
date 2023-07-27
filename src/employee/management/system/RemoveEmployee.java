@@ -26,7 +26,7 @@ public class RemoveEmployee extends JFrame implements ActionListener{
          add(cEmpId);
          
          try{
-             Con c=new Con();
+             Conn c=new Conn();
              String query="select * from employee";
              ResultSet rs=c.s.executeQuery(query);
              while(rs.next()){
@@ -139,7 +139,7 @@ public class RemoveEmployee extends JFrame implements ActionListener{
          add(labelempId);
 
          try{
-             Con c=new Con();
+             Conn c=new Conn();
              String query="select * from employee where empId = '"+cEmpId.getSelectedItem()+"'";
              ResultSet rs=c.s.executeQuery(query);
              while(rs.next()){
@@ -164,7 +164,7 @@ public class RemoveEmployee extends JFrame implements ActionListener{
          public void itemStateChanged(ItemEvent ie){
              
              try{
-             Con c=new Con();
+             Conn c=new Conn();
              String query="select * from employee where empId = '"+cEmpId.getSelectedItem()+"'";
              ResultSet rs=c.s.executeQuery(query);
              while(rs.next()){
@@ -217,7 +217,7 @@ public class RemoveEmployee extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==delete){
             try{
-             Con c=new Con();
+             Conn c=new Conn();
              String query="delete from employee where empId = '"+cEmpId.getSelectedItem()+"'";
              c.s.executeUpdate(query);
              JOptionPane.showMessageDialog(null, "Employee Information Deleted Successfully");
